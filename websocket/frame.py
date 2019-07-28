@@ -115,4 +115,9 @@ class WebsocketFrame:
         if length == 127:
             return (length2 << (6*8)) + length6
         return None
+    @property
+    def maskkey(self):
+        if self._field_maskkey is None:
+            return None
+        return int(self._field_maskkey)
         
